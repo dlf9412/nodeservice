@@ -7,7 +7,7 @@ const options={
   port:3306,
   user:'root',
   password:'123456',
-  database:'mysql',//指定操作的数据库
+  database:'paassql',//指定操作的数据库
 }
 // 创建数据库连接池
  const connection=mysql.createConnection(options)
@@ -19,5 +19,15 @@ connection.connect(function(err){
   }
   console.log('连接成功')
 })
+
+
+// connection.end(function (err) {
+//   if (err) {
+//     return console.log('error:' + err.message);
+//   }
+//   console.log('Close the database connection.');
+// });
+
+
 module.exports=connection
 
