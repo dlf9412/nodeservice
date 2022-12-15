@@ -10,17 +10,17 @@ const options={
   database:'paassql',//指定操作的数据库
 }
 // 创建数据库连接池
- const connection=mysql.createConnection(options)
-// 创建connection
-connection.connect(function(err){
-  if(err){
-    console.log('连接失败')
-    return 
-  }
-  console.log('连接成功')
-})
+ const pool=mysql.createPool(options)
+// 创建connection,测试语句，确定建立连接以后可以删除
+// pool.getConnection(function(err){
+//   if(err){
+//     console.log('连接失败')
+//     return 
+//   }
+//   console.log('连接成功')
+// })
 
-
+//关闭连接
 // connection.end(function (err) {
 //   if (err) {
 //     return console.log('error:' + err.message);
@@ -29,5 +29,23 @@ connection.connect(function(err){
 // });
 
 
-module.exports=connection
+//promise封装query 
+const query=(sql,params=[])=>{
+  if(!pool)return;
+  return new Promise((resolve,reject)=>{
+    pool.query(sql,params,(error, results, fields)=>{
+      if(error){
+        reject(error)
+      }else{
+        resolve(results)
+      }
+    })
+  })
+}
+
+
+module.exports={
+  query,
+  pool
+}
 
