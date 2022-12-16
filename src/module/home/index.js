@@ -10,8 +10,6 @@ const selectAppList=(ctx,next)=>{
       res(next())
     })
   })
-  
-  
 }
 
 // 异步请求的第二种方式，使用封装的query方法

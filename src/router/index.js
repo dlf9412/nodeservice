@@ -1,7 +1,8 @@
 const Router=require('koa-router')
-const home=require('./home/api')
-let API=[]
-API=[...home]
+const home=require('./home')
+let API=[
+  ...home
+]
 /*
 * prefix 路由前缀
 */

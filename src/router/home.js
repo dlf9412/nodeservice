@@ -1,4 +1,4 @@
-const {selectAppList,selectSingleApp}=require('./select')
+const {selectAppList,selectSingleApp}=require('../module/home/index')
 module.exports=[{
   url:'/select',
   methods:'get',
