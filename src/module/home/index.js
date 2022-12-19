@@ -1,13 +1,22 @@
 const  {query,pool} =require('../../mysql/index')
 
+//url:/select
+// const selectAppList=(ctx,body)=>{
+//   const selectTodo="select * from user"
+//   pool.query(selectTodo,(err,result,fields)=>{
+//     if(err)throw err
+//     console.log(ctx)
+//     ctx.body=result
+//   })
+// }
+
 // 第一种异步实现方式
 const selectAppList=(ctx,next)=>{
-  console.log(ctx.query.username)
   return new Promise((res,rej)=>{
     const selectTodo='select * from user'
     pool.query(selectTodo,(error,results,fields)=>{
       ctx.body=results
-      res(next())
+      res()
     })
   })
 }
