@@ -19,7 +19,6 @@ const selectSingleApp = async (ctx, next) => {
     ctx.body = data
 }
 
-const a = { 1: 2 }
 module.exports = {
     selectAppList,
     selectSingleApp

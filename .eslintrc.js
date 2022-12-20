@@ -34,6 +34,7 @@ module.exports = {
         "template-tag-spacing": [2, 'always'], // 模板标记和它们的字面量之间有空格
         "object-curly-spacing": [2, 'always'], // 强制在花括号中使用一致的空格
         "no-whitespace-before-property": 2, // 禁止属性前有空白
-        "comma-spacing": 2
+        "comma-spacing": 2, // 逗号后面空格
+        "no-multiple-empty-lines": 2// 禁止多余空行
     }
 }
