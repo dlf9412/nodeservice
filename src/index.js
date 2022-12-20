@@ -1,11 +1,11 @@
-const Koa=require('koa')
-const bodyParser=require('koa-bodyparser')
-const router=require('./router/index')
+const Koa = require('koa')
+const bodyParser = require('koa-bodyparser')
+const router = require('./router/index')
 
 // const {proxy}=require('./config/index')
 
 // 初始化
-const app=new Koa()
+const app = new Koa()
 
 // 设置跨域
 // app.use(proxy)
@@ -15,6 +15,6 @@ app.use(bodyParser())
 
 app.use(router.routes())
 // 启动服务，在端口6060监听
-app.listen(6060,()=>{
-  console.log('6060，服务启动了')
+app.listen(6060, () => {
+    console.log('6060，服务启动了')
 })
